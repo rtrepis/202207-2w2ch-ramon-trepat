@@ -16,6 +16,18 @@ const strictEcual = function (a, b) {
   return Object.is(a, b);
 };
 
+const strictalEcualV2 = function (a, b) {
+  const canvioA = a;
+
+  const canvioB = b;
+
+  a = canvioA;
+
+  b = canvioB;
+
+  return Object.is(a, b);
+};
+
 console.log("1 + 1 :" + strictEcual(1, 1));
 console.log("NaN + NaN :" + strictEcual(NaN, NaN));
 console.log("0 + -0 :" + strictEcual(0, -0));
@@ -24,3 +36,14 @@ console.log("1 + '1' :" + strictEcual(1, "1"));
 console.log("true + false :" + strictEcual(true, false));
 console.log("false + false :" + strictEcual(false, false));
 console.log("Water + oil :" + strictEcual("Water", "oil"));
+
+console.log("--- strictalEcualV2 ---");
+
+console.log("1 + 1 :" + strictalEcualV2(1, 1));
+console.log("NaN + NaN :" + strictalEcualV2(NaN, NaN));
+console.log("0 + -0 :" + strictalEcualV2(0, -0));
+console.log("-0 + 0 :" + strictalEcualV2(-0, 0));
+console.log("1 + '1' :" + strictalEcualV2(1, "1"));
+console.log("true + false :" + strictalEcualV2(true, false));
+console.log("false + false :" + strictalEcualV2(false, false));
+console.log("Water + oil :" + strictalEcualV2("Water", "oil"));
