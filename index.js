@@ -17,6 +17,7 @@ const strictEcual = function (a, b) {
 };
 
 const strictalEcualV2 = function (a, b) {
+  /*
   const canvioA = a;
 
   const canvioB = b;
@@ -24,6 +25,13 @@ const strictalEcualV2 = function (a, b) {
   a = canvioA;
 
   b = canvioB;
+*/
+  if (Object.is(typeof a, "number") && Object.is(typeof b, "number")) {
+    //    a = Math.round(a);
+    //    b = Math.round(b);
+    a = a / a;
+    b = b / b;
+  }
 
   return Object.is(a, b);
 };
